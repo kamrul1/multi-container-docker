@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  multicontainerdocker.api:
+    image: ${DOCKER_REGISTRY-}multicontainerdockerapi
+    build:
+      context: .
+      dockerfile: MultiContainerDocker.API/Dockerfile
+
+  multicontainerdocker.web:
+    image: ${DOCKER_REGISTRY-}multicontainerdockerweb
+    build:
+      context: .
+      dockerfile: MultiContainerDocker.Web/Dockerfile
+
